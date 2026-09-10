@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Sources</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f4f6f9;
+            color: #333;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0d6efd;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            padding: 15px;
+            background: #0d6efd;
+            color: white;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: #0b5ed7;
+            transform: translateX(5px);
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: gray;
+            font-size: 14px;
+        }
+
+        @media (max-width:600px){
+            body{
+                padding:20px;
+            }
+
+            .container{
+                padding:20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Project Sources</h1>
+
+    <p>Click on any source below to open its PDF.</p>
+
+    <ul id="sourceList"></ul>
+
+    <footer>
+        Submitted as part of the project documentation.
+    </footer>
+
+</div>
+
+<script>
+
+const sources = [
+    {
+        name: "Patwardhan (2014) – Butterflies",
+        file: "s1.pdf"
+    },
+    {
+        name: "Kasambe & Khan (2022) – Birds",
+        file: "ResearchPaper.pdf"
+    },
+    {
+        name: "Bird community structure corbett",
+        file: "Bird community structure corbett.pdf"
+    },
+    {
+        name: "Species diversity corbett",
+        file: "species diversity corbett.pdf"
+    },
+];
+
+const list = document.getElementById("sourceList");
+
+sources.forEach(source => {
+
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+        <a href="${source.file}" target="_blank">
+            📄 ${source.name}
+        </a>
+    `;
+
+    list.appendChild(li);
+
+});
+
+</script>
+
+</body>
+</html>
